@@ -1,5 +1,6 @@
 const main = require('./routes');
-const auth = require('./auth');
+const signIn = require('./sign-in');
+const logIn = require('./log-in');
 
 
-module.exports = {main,auth};
+module.exports = {main,signIn,logIn};

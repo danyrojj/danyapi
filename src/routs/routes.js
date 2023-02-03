@@ -1,14 +1,22 @@
 const express = require('express');
 const {PREFIX} = require('../consts');
+const mongoose = require('../db/db');
+const {Item} = require('../db/models');
+
+
 
 const app = express();
 
-app.get(PREFIX+'/items', (req,res)=>{
-
-
-
-
-    res.status(201).send(["data"]);
+app.get(PREFIX+'/items', async (req,res)=>{
+    
+    try{
+        const items = await Item.find();
+           
+        res.status(200).send(items);
+    }catch(e){
+        console.log('req invalid');
+        res.status(500).send('req invalid');
+    }
 });
 
 

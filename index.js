@@ -1,13 +1,14 @@
 const http = require('http');
 const express = require('express');
-const {main, auth} = require('./src/routs/index');
-const mongoose = require('./src/db');
+const {main, signIn,logIn} = require('./src/routs/index');
+const db = require('./src/db/db') // i sorta need this import...
 
 const port = process.env.PORT  || 3000;
 const app = express();
 
 app.use(main);
-app.use(auth);
+app.use(signIn);
+app.use(logIn);
 
 const server = http.createServer(app);
 
