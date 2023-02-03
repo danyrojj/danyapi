@@ -1,14 +1,14 @@
-const { PREFIX } = require('../consts');
+const { DOMAIN } = require('../consts');
 const express = require('express');
 const mongoose = require('../db/db');
 const {User} = require('../db/models');
 
 const app = express();
 
-console.log(PREFIX)
+console.log(DOMAIN)
 app.use(express.json());
 
-app.post(PREFIX + '/sign-in', async (req, res) => {
+app.post(DOMAIN + '/sign-in', async (req, res) => {
     const { usr, pwd } = req.body;
 
 
@@ -29,7 +29,7 @@ app.post(PREFIX + '/sign-in', async (req, res) => {
               console.log(error);
               res.status(500).send(error);
             } else {
-                console.log('Item saved successfully!');
+                console.log('Signed in successfully!');
                 res.status(200).send('signed in successfully'); 
             }
         });

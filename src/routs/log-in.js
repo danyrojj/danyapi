@@ -1,15 +1,14 @@
-const { PREFIX } = require('../consts');
+const { DOMAIN } = require('../consts');
 const express = require('express');
 const mongoose = require('../db/db');
 const {User} = require('../db/models');
-const e = require('express');
 const TokenHandler = require('../auth/tokenHandler');
 
 const app = express();
 
 app.use(express.json());
 
-app.post(PREFIX + '/log-in', async (req, res) => {
+app.post(DOMAIN + '/log-in', async (req, res) => {
     const { usr, pwd } = req.body;
     const Users = mongoose.connection.collection('users');
     const user = await Users.findOne({name: usr });

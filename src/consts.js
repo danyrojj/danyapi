@@ -1,5 +1,6 @@
-const PREFIX = '/myshoppingapp'
+const DOMAIN =  '/myshoppingapp'
 const SECRET = 'huy'
+const ITEMS_PATH = '/items'
 
 
-module.exports={PREFIX, SECRET};
+module.exports={DOMAIN, SECRET,ITEMS_PATH};
