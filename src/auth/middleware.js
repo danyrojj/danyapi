@@ -1,7 +1,8 @@
 const TokenHandler = require('./tokenHandler');
 
 const auth = (req,res,next) => {
-    const token = req.header('x-auth-token');
+    const token = req.header('authorization').split(' ')[1]; // get rid of bearer
+    console.log(token)
     if(!token) return res.status(401).send('Access denied - no access token provided');
 
     try{
