@@ -2,8 +2,7 @@ const http = require('http');
 const express = require('express');
 const {main,addItem, signIn,logIn} = require('./src/routs/index');
 const db = require('./src/db/db') // i sorta need this import...
-
-const port = process.env.PORT  || 3000;
+const {port} = require('./src/config');
 const app = express();
 
 app.use(signIn);

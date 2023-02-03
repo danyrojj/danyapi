@@ -1,17 +1,18 @@
 const jwt = require('jsonwebtoken')
-const {SECRET} = require('../consts');
+
+const {secret} = require('../config/index');
 
 class TokenHandler{
 constructor(){}
 
 generateToken(user){
-    const t = jwt.sign(user,SECRET);
+    const t = jwt.sign(user,secret);
     return t;
 }
 
 
 verifyToken(token){
-    return jwt.verify(token,SECRET);
+    return jwt.verify(token,secret);
 }
 
 revokeToken(token){

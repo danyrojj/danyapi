@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const config = require('../config/index');
 
-mongoose.connect('mongodb://localhost:27017/test',{ useNewUrlParser: true },(e)=>console.log('error:', e))
+mongoose.connect(config.db,{ useNewUrlParser: true },(e)=>console.log('error:', e))
 
 
 const db = mongoose.connection;
