@@ -9,7 +9,9 @@ class ItemService{
         return await Item.find();
     }
 
-    getOne=async(id)=>{}
+    // getOne=async(id)=>{
+    //     return await Item.find({id})
+    // }
 }
 
 
