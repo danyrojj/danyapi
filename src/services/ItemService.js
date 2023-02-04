@@ -9,6 +9,10 @@ class ItemService{
         return await Item.find();
     }
 
+    static add = async()=>{
+        
+    }
+
     // getOne=async(id)=>{
     //     return await Item.find({id})
     // }

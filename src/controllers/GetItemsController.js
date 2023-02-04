@@ -1,8 +1,7 @@
-const ItemService = require('../services/ItemService');
+const {ItemService} = require('../services/index');
 
 const controller = async (req,res)=>{
     try{
-        console.log('upooiohjoihj')
         const items = await ItemService.getMany();
         res.status(200).send(items);
     }catch(e){

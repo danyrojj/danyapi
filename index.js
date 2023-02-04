@@ -1,11 +1,11 @@
 const http = require('http');
 const express = require('express');
-const {main,addItem, signIn,logIn} = require('./src/routs/index');
+const {main,addItem, signUp,logIn} = require('./src/routs/index');
 const db = require('./src/db/db') // i sorta need this import...
 const {port} = require('./src/config');
 const app = express();
 
-app.use(signIn);
+app.use(signUp);
 app.use(logIn);
 app.use(main);
 app.use(addItem);

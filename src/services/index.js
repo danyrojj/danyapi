@@ -1,4 +1,5 @@
 const ItemService = require('./ItemService');
+const UserService = require('./UserService');;
 
 
-module.exports = ItemService
+module.exports = {ItemService,UserService}
