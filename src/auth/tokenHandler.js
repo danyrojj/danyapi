@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 
-const {secret} = require('../config/index');
+const {secret} = require('../config/index').jwt;
 
 class TokenHandler{
 constructor(){}

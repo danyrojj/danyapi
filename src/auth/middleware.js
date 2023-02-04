@@ -8,7 +8,6 @@ const auth = (req,res,next) => {
     try{
         const tokenHandler = new TokenHandler();
         const decoded = tokenHandler.verifyToken(token)
-        console.log({decoded});
         req.user = decoded;
         next();
     }catch(e){
